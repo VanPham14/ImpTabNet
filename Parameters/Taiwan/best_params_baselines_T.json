@@ -1,0 +1,45 @@
+{
+  "n_trials": 30,
+  "tune_seed": 42,
+  "results": {
+    "XGBoost": {
+      "best_valid_auc": 0.7788,
+      "params": {
+        "learning_rate": 0.010519227699477624,
+        "max_depth": 7,
+        "min_child_weight": 10.395030376759106,
+        "subsample": 0.9648824947659532,
+        "colsample_bytree": 0.6024245475816379,
+        "reg_lambda": 9.892454791555975
+      }
+    },
+    "LightGBM": {
+      "best_valid_auc": 0.7774,
+      "params": {
+        "scale_pos_weight": 1.0,
+        "learning_rate": 0.026245356640087012,
+        "num_leaves": 37,
+        "min_child_samples": 181,
+        "subsample": 0.7445134866787518,
+        "colsample_bytree": 0.6468360369812218,
+        "reg_lambda": 0.23932562420374529
+      }
+    },
+    "CatBoost": {
+      "best_valid_auc": 0.7781,
+      "params": {
+        "learning_rate": 0.010457065772553613,
+        "depth": 6,
+        "l2_leaf_reg": 2.7987915626974185,
+        "random_strength": 1.2323445654005565
+      }
+    },
+    "LogisticRegression": {
+      "best_valid_auc": 0.7141,
+      "params": {
+        "C": 3.2048888853410893,
+        "class_weight": "balanced"
+      }
+    }
+  }
+}

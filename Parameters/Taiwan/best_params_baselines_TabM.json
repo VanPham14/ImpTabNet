@@ -1,0 +1,17 @@
+{
+  "n_trials": 30,
+  "tune_seed": 42,
+  "results": {
+    "TabM": {
+      "best_valid_auc": 0.7794,
+      "params": {
+        "k": 32,
+        "d_block": 128,
+        "n_blocks": 4,
+        "dropout": 0.21047466768920906,
+        "lr": 0.005603043782396135,
+        "weight_decay": 2.6070869366446273e-05
+      }
+    }
+  }
+}
