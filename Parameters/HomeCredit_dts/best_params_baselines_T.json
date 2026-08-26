@@ -1,0 +1,56 @@
+{
+  "n_trials": 30,
+  "tune_seed": 42,
+  "results": {
+    "XGBoost": {
+      "best_valid_auc": 0.785,
+      "params": {
+        "learning_rate": 0.028180680291847244,
+        "max_depth": 3,
+        "min_child_weight": 14.00042750373098,
+        "subsample": 0.7760609974958406,
+        "colsample_bytree": 0.6488152939379115,
+        "reg_lambda": 0.09565499215943825
+      }
+    },
+    "LightGBM": {
+      "best_valid_auc": 0.7846,
+      "params": {
+        "scale_pos_weight": 1.0,
+        "learning_rate": 0.018020684901970098,
+        "num_leaves": 17,
+        "min_child_samples": 161,
+        "subsample": 0.8359581064679306,
+        "colsample_bytree": 0.8801151332999179,
+        "reg_lambda": 3.640392501061493
+      }
+    },
+    "CatBoost": {
+      "best_valid_auc": 0.7835,
+      "params": {
+        "learning_rate": 0.024024430499735266,
+        "depth": 4,
+        "l2_leaf_reg": 5.946851656967488,
+        "random_strength": 0.3007016232607128
+      }
+    },
+    "LogisticRegression": {
+      "best_valid_auc": 0.7676,
+      "params": {
+        "C": 0.005368309883231112,
+        "class_weight": null
+      }
+    },
+    "TabM": {
+      "best_valid_auc": 0.7807,
+      "params": {
+        "k": 32,
+        "d_block": 384,
+        "n_blocks": 2,
+        "dropout": 0.16934681740942273,
+        "lr": 0.0012754723287174436,
+        "weight_decay": 0.00018137636947693084
+      }
+    }
+  }
+}

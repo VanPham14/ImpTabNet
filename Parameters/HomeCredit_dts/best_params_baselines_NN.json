@@ -1,0 +1,25 @@
+{
+  "n_trials": 30,
+  "tune_seed": 42,
+  "results": {
+    "MLP": {
+      "best_valid_auc": 0.7687,
+      "params": {
+        "hidden": "128",
+        "alpha": 0.00010357266563521458,
+        "lr_init": 0.0005488867836714237,
+        "activation": "tanh"
+      }
+    },
+    "TabNet": {
+      "best_valid_auc": 0.7696,
+      "params": {
+        "n_da": 16,
+        "n_steps": 4,
+        "gamma": 1.836072814776902,
+        "lambda_sparse": 0.00027131713354741627,
+        "lr": 0.02332961810276322
+      }
+    }
+  }
+}

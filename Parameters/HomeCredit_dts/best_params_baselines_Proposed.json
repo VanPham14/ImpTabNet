@@ -1,0 +1,17 @@
+{
+  "n_trials": 30,
+  "tune_seed": 42,
+  "results": {
+    "Proposed": {
+      "best_valid_auc": 0.7835,
+      "params": {
+        "n_d": 32,
+        "n_steps": 6,
+        "gamma": 1.472520062066199,
+        "lambda_sparse": 0.00014508855366255824,
+        "lr": 0.0014350621441156332,
+        "dropout": 0.19270861684184856
+      }
+    }
+  }
+}
