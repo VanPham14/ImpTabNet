@@ -18,13 +18,13 @@ An enhanced TabNet for credit scoring that combines periodic (PLR) numerical emb
 │   │   ├── PLR_Ensemble_gridsearch.xlsx         # Sweep over ensemble size k and embedding dim d
 │   │   ├── best_params_baselines_NN.json        # Neural baselines
 │   │   ├── best_params_baselines_Proposed.json  # Proposed model
-│   │   └── best_params_baselines_T.json         # Tree-based models + Logistic Regression
+│   │   └── best_params_baselines_T.json         # Tree-based models + Logistic Regression + TabM
 │   └── Taiwan/
 │       ├── PLR_Ensemble_gridsearch.xlsx         # Sweep over ensemble size k and embedding dim d
 │       ├── best_params_baselines_NN.json        # Neural baselines
 │       ├── best_params_baselines_Proposed.json  # Proposed model
 │       ├── best_params_baselines_T.json         # Tree-based models + Logistic Regression
-│       └── best_params_baselines_TabM.json      # TabM
+│       └── best_params_baselines_TabM.json      # TabM (stored separately on Taiwan)
 ├── SourceCode/
 │   ├── HomeCredit_code.ipynb                    # Full pipeline for Home Credit
 │   └── Taiwan_code.ipynb                        # Full pipeline for Taiwan
@@ -48,6 +48,7 @@ Both datasets are public and must be downloaded separately:
 
 - Every model is tuned independently on each dataset with Optuna (TPE sampler, seed 42, 30 trials), selecting on validation AUC. Hyperparameters are not transferred between datasets.
 - The selected values for all models are stored in `Parameters/<dataset>/`. Each JSON file maps a model name to its best parameters and best validation AUC.
+- TabM parameters are stored in `best_params_baselines_T.json` for Home Credit, but in a separate file `best_params_baselines_TabM.json` for Taiwan.
 - Tree-based models use early stopping on the validation set to set the number of estimators.
 - Final ensemble size and embedding dimension of the proposed model: **k = 8, d = 8** (Home Credit) and **k = 4, d = 16** (Taiwan), chosen on the validation set (see `PLR_Ensemble_gridsearch.xlsx`).
 
