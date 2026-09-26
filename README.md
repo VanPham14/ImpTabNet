@@ -13,17 +13,21 @@ An enhanced TabNet for credit scoring that combines periodic (PLR) numerical emb
 ## Repository Structure
 
 ```
-├── Parameters/                              # Tuned hyperparameters (Optuna, 30 trials per model)
+├── Parameters/                                  # Tuned hyperparameters (Optuna, 30 trials per model)
 │   ├── HomeCredit_dts/
-│   │   ├── best_params_baselines_T.json         # Tree-based models + Logistic Regression
-│   │   ├── best_params_baselines_NN.json        # Neural baselines (MLP, TabNet, TabM)
+│   │   ├── PLR_Ensemble_gridsearch.xlsx         # Sweep over ensemble size k and embedding dim d
+│   │   ├── best_params_baselines_NN.json        # Neural baselines
 │   │   ├── best_params_baselines_Proposed.json  # Proposed model
-│   │   └── PLR_Ensemble_gridsearch.xlsx         # Sweep over ensemble size k and embedding dim d
+│   │   └── best_params_baselines_T.json         # Tree-based models + Logistic Regression
 │   └── Taiwan/
-│       ├── (same files as above)
-│       └── best_params_baselines_TabM.json      # TabM (tuned separately on Taiwan)
-├── notebooks/        # Feature engineering, training, evaluation, ablation, uncertainty analysis
-├── src/              # Model implementation (PLR embedding, BatchEnsemble TabNet)
+│       ├── PLR_Ensemble_gridsearch.xlsx         # Sweep over ensemble size k and embedding dim d
+│       ├── best_params_baselines_NN.json        # Neural baselines
+│       ├── best_params_baselines_Proposed.json  # Proposed model
+│       ├── best_params_baselines_T.json         # Tree-based models + Logistic Regression
+│       └── best_params_baselines_TabM.json      # TabM
+├── SourceCode/
+│   ├── HomeCredit_code.ipynb                    # Full pipeline for Home Credit
+│   └── Taiwan_code.ipynb                        # Full pipeline for Taiwan
 └── README.md
 ```
 
@@ -51,8 +55,16 @@ Both datasets are public and must be downloaded separately:
 
 1. Clone the repo and install dependencies: PyTorch, XGBoost, LightGBM, CatBoost, Optuna, `pytorch-tabnet`, `tabm`, `entmax`.
 2. Download the datasets (see [Data](#data)).
-3. Run the notebooks in order: feature engineering → baseline tuning → proposed model training → evaluation (multi-seed, ablation, DeLong test, uncertainty analysis).
-4. To skip tuning, load the saved parameters from `Parameters/<dataset>/` instead of running Optuna.
+3. Open the notebook for the dataset in `SourceCode/` and run it from top to bottom. Each notebook is self-contained and includes the model implementation (PLR embedding, BatchEnsemble TabNet) and the full pipeline:
+   - **A** Setup and helper functions
+   - **B** Data loading, feature engineering, split, preprocessing, baseline models
+   - **C** Proposed model training
+   - **D** Multi-seed evaluation
+   - **E** Ablation study
+   - **F** DeLong test
+   - **G** Feature importance from attention masks
+   - **H** Uncertainty analysis and selective prediction
+4. Optuna tuning cells are commented out by default; the notebooks load the saved parameters from `Parameters/<dataset>/`. Uncomment these cells to re-run tuning.
 
 Results are averaged over three seeds (42, 1, 7).
 
