@@ -78,5 +78,5 @@ Results are averaged over three seeds (42, 1, 7).
 If you use this code, please cite:
 
 ```
-V. T. T. Pham, "Uncertainty-Aware TabNet for Credit Scoring: Periodic Embeddings and Batch Ensembling," FAIR'2026.
+V. T. T. Pham, "Uncertainty-Aware TabNet for Credit Scoring: Periodic Embeddings and Batch Ensembling," in Proc. 2026 19th Conf. Fundamental and Applied IT Research (FAIR), 2026.
 ```
