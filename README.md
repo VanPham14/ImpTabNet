@@ -26,8 +26,12 @@ An enhanced TabNet for credit scoring that combines periodic (PLR) numerical emb
 │       ├── best_params_baselines_T.json         # Tree-based models + Logistic Regression
 │       └── best_params_baselines_TabM.json      # TabM (stored separately on Taiwan)
 ├── SourceCode/
-│   ├── HomeCredit_code.ipynb                    # Full pipeline for Home Credit
-│   └── Taiwan_code.ipynb                        # Full pipeline for Taiwan
+│   ├── HomeCredit_code.ipynb                    # Original pipeline for Home Credit (submitted version)
+│   └── Taiwan_code.ipynb                        # Original pipeline for Taiwan (submitted version)
+│   ├── update_HomeCredit_code.ipynb             # Updated pipeline for Home Credit (camera-ready: DeLong CIs, per-seed tests)
+│   ├── update_Taiwan_code.ipynb                 # Updated pipeline for Taiwan (camera-ready: DeLong CIs, per-seed tests)
+│   ├── HomeCredit_ablation_only.ipynb           # Ablation study for Home Credit (3 seeds, Table III)
+│   └── Taiwan_ablation_only.ipynb               # Ablation study for Taiwan (3 seeds, Table III)
 └── README.md
 ```
 
